@@ -1,9 +1,14 @@
 import pymongo
 import requests
 from bs4 import BeautifulSoup
+import os
+from dotenv import load_dotenv
 
 
-MONGO_URI = "mongodb+srv://Database2026:Project2026@cluster0.5r3zyak.mongodb.net/?appName=Cluster0"
+load_dotenv() 
+MONGO_URI = os.getenv("MONGO_URI")
+
+
 
 client = pymongo.MongoClient(MONGO_URI)
 db = client["ProjectDB"]
